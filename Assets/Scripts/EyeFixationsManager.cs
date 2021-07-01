@@ -8,19 +8,18 @@ public class EyeFixationsManager : MonoBehaviour
     Transform _selectObj;
     float Timer = 0f;
     float gameTime = 0f;
-    public GameObject Object;
+    bool timeGate = false;
     //public Text time;
 
     Pvr_UnitySDKAPI.EyeTrackingGazeRay gazeRay;
     void Update()
     {
-        print("timer: "+Timer);
-        print("game time: "+ gameTime);
+        print("timer: " + Timer);
+        print("Game Time: " + gameTime);
         gameTime += Time.deltaTime;
-        //time.text = Timer.ToString("0.00");
-        if(Timer >= 3f)
+        if (timeGate)
         {
-            Object.transform.GetComponent<Renderer>().material.color = Color.yellow;
+            Timer += Time.deltaTime;
         }
         bool result = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingGazeRay(ref gazeRay);
         if (result)
@@ -29,37 +28,36 @@ public class EyeFixationsManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 20))
             {
-                print("hit obj: "+ hit.transform.name);
+                print("inside eyetracking ");
                 if (hit.collider.transform.name.Equals("line")) return;
-                //馬上更換注視物件
                 if (_selectObj != null && _selectObj != hit.transform)
                 {
-                    Timer = 0f;
+                    timeGate = false;
+                    //_selectObj.GetComponent<ETMEnity>().StopAnimation();
                     _selectObj = null;
                 }
-                //持續注視物件
-                else if( _selectObj == hit.transform)
+                else if (_selectObj == null)  //注視狀況下
                 {
-                    Timer += Time.deltaTime;
-                    _selectObj.GetComponent<Renderer>().material.color = Color.blue;
-                }
-                //從未注視轉成注視狀況
-                else if (_selectObj == null)  
-                {
-                    Timer += Time.deltaTime;
+                    //Timer += Time.deltaTime;
+                    timeGate = true;
                     _selectObj = hit.transform;
+                    //_selectObj.GetComponent<ETMEnity>().PlayAnimation();
+                    //Object.transform.GetComponent<Renderer>().material.color = Color.yellow;
                     _selectObj.GetComponent<Renderer>().material.color = Color.blue;
                     //Destroy(GameObject.Find(_selectObj.gameObject.name));
+
                 }
 
             }
             else
             {
-                //注視轉為未注視
-                if (_selectObj != null)  
+                if (_selectObj != null)  //未注視狀況下
                 {
-                    Timer = 0f;
+                    //Timer = 0f;
+                    timeGate = false;
                     _selectObj.GetComponent<Renderer>().material.color = Color.red;
+                    //Object.transform.GetComponent<Renderer>().material.color = Color.red;
+                    //_selectObj.GetComponent<ETMEnity>().StopAnimation();
                     _selectObj = null;
                 }
 
