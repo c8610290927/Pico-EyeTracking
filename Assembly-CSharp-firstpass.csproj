@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{AB522903-F90F-2F53-DFF9-C83FC23BAAFA}</ProjectGuid>
+    <ProjectGuid>{0A7C12C4-A706-A1F2-6B2F-20588DCC0221}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -283,58 +283,58 @@
      <None Include="Assets\Plugins\Android\res\values\strings.xml" />
      <None Include="Assets\Plugins\Android\res\values-ko\color.xml" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.Runtime">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ShaderGraph.Editor">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -514,46 +514,46 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="LZ4Sharp">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/EquipmentSDK/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/EquipmentSDK/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/EquipmentSDK/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/EquipmentSDK/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="DeviceLibrary">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/LabDataVisualization/Plugins/DeviceLibrary.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/LabDataVisualization/Plugins/DeviceLibrary.dll</HintPath>
  </Reference>
  <Reference Include="Vectrosity">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/LabDataVisualization/Vectrosity/Vectrosity/Plugins/Vectrosity.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/LabDataVisualization/Vectrosity/Vectrosity/Plugins/Vectrosity.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Plugins/LitJson.dll</HintPath>
- </Reference>
- <Reference Include="DataSync.Core">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.Core.dll</HintPath>
- </Reference>
- <Reference Include="DataSync">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Newtonsoft.Json.dll</HintPath>
- </Reference>
- <Reference Include="NLog">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.dll</HintPath>
- </Reference>
- <Reference Include="Autofac">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/Third Party/Autofac.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json.Schema">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/Third Party/Newtonsoft.Json.Schema.dll</HintPath>
- </Reference>
- <Reference Include="InTheHand.Devices.Bluetooth">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.Devices.Bluetooth.dll</HintPath>
- </Reference>
- <Reference Include="InTheHand">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>D:/unity project/PicoSDK_TEST/PicoSDK_TEST/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DataSync.Core">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="DataSync">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="NLog">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.dll</HintPath>
+ </Reference>
+ <Reference Include="Autofac">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Autofac.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json.Schema">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Newtonsoft.Json.Schema.dll</HintPath>
+ </Reference>
+ <Reference Include="InTheHand.Devices.Bluetooth">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.Devices.Bluetooth.dll</HintPath>
+ </Reference>
+ <Reference Include="InTheHand">
+ <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

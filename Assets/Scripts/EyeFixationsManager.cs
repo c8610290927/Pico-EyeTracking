@@ -8,8 +8,8 @@ public class EyeFixationsManager : MonoBehaviour
     Transform _selectObj;
     float Timer = 0f;
     float gameTime = 0f;
-    bool timeGate = false;
-    //public Text time;
+    bool timeGate = false;  //注視計時開關
+    float fixationsGate = 2f; //注視時間設定
 
     Pvr_UnitySDKAPI.EyeTrackingGazeRay gazeRay;
     void Update()
@@ -17,10 +17,12 @@ public class EyeFixationsManager : MonoBehaviour
         print("timer: " + Timer);
         print("Game Time: " + gameTime);
         gameTime += Time.deltaTime;
+        
         if (timeGate)
-        {
             Timer += Time.deltaTime;
-        }
+        if(Timer >= fixationsGate)
+            Destroy(GameObject.Find(_selectObj.gameObject.name));
+
         bool result = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingGazeRay(ref gazeRay);
         if (result)
         {
@@ -30,34 +32,34 @@ public class EyeFixationsManager : MonoBehaviour
             {
                 print("inside eyetracking ");
                 if (hit.collider.transform.name.Equals("line")) return;
+                //從注視狀況切換
                 if (_selectObj != null && _selectObj != hit.transform)
                 {
                     timeGate = false;
-                    //_selectObj.GetComponent<ETMEnity>().StopAnimation();
                     _selectObj = null;
                 }
-                else if (_selectObj == null)  //注視狀況下
+                //進入注視狀況
+                else if (_selectObj == null)  
                 {
                     //Timer += Time.deltaTime;
+                    Timer = 0f;
                     timeGate = true;
                     _selectObj = hit.transform;
-                    //_selectObj.GetComponent<ETMEnity>().PlayAnimation();
                     //Object.transform.GetComponent<Renderer>().material.color = Color.yellow;
                     _selectObj.GetComponent<Renderer>().material.color = Color.blue;
-                    //Destroy(GameObject.Find(_selectObj.gameObject.name));
 
                 }
 
             }
             else
             {
-                if (_selectObj != null)  //未注視狀況下
+                //未注視狀況
+                if (_selectObj != null)  
                 {
                     //Timer = 0f;
                     timeGate = false;
                     _selectObj.GetComponent<Renderer>().material.color = Color.red;
                     //Object.transform.GetComponent<Renderer>().material.color = Color.red;
-                    //_selectObj.GetComponent<ETMEnity>().StopAnimation();
                     _selectObj = null;
                 }
 
@@ -67,7 +69,6 @@ public class EyeFixationsManager : MonoBehaviour
         {
             if (_selectObj)
             {
-                //_selectObj.GetComponent<ETMEnity>().StopAnimation();
                 _selectObj = null;
             }
         }

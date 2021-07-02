@@ -69,61 +69,61 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9922}
+      Script: {instanceID: 9928}
     - Class: 114
-      Script: {instanceID: 10138}
+      Script: {instanceID: 10144}
     - Class: 114
-      Script: {instanceID: 10430}
+      Script: {instanceID: 10388}
     - Class: 114
-      Script: {instanceID: 10540}
+      Script: {instanceID: 10446}
     - Class: 114
-      Script: {instanceID: 10580}
+      Script: {instanceID: 10556}
     - Class: 114
-      Script: {instanceID: 10816}
+      Script: {instanceID: 10596}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 10834}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 11758}
+      Script: {instanceID: 11630}
     - Class: 114
-      Script: {instanceID: 11926}
+      Script: {instanceID: 11778}
     - Class: 114
-      Script: {instanceID: 12146}
+      Script: {instanceID: 11950}
     - Class: 114
-      Script: {instanceID: 12318}
+      Script: {instanceID: 12172}
     - Class: 114
-      Script: {instanceID: 12676}
+      Script: {instanceID: 12344}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12644}
     - Class: 114
-      Script: {instanceID: 13602}
+      Script: {instanceID: 12710}
     - Class: 114
-      Script: {instanceID: 14034}
+      Script: {instanceID: 12900}
     - Class: 114
-      Script: {instanceID: 14068}
+      Script: {instanceID: 13640}
     - Class: 114
-      Script: {instanceID: 14104}
+      Script: {instanceID: 13804}
     - Class: 114
-      Script: {instanceID: 14144}
+      Script: {instanceID: 14076}
     - Class: 114
-      Script: {instanceID: 14252}
+      Script: {instanceID: 14110}
     - Class: 114
-      Script: {instanceID: 14530}
+      Script: {instanceID: 14146}
     - Class: 114
-      Script: {instanceID: 15078}
+      Script: {instanceID: 14186}
     - Class: 114
-      Script: {instanceID: 15204}
+      Script: {instanceID: 14296}
     - Class: 114
-      Script: {instanceID: 15280}
+      Script: {instanceID: 14574}
     - Class: 114
-      Script: {instanceID: 26472}
+      Script: {instanceID: 14796}
     - Class: 114
-      Script: {instanceID: 26584}
+      Script: {instanceID: 15124}
     - Class: 114
-      Script: {instanceID: 170232}
+      Script: {instanceID: 15250}
     - Class: 114
-      Script: {instanceID: 191978}
+      Script: {instanceID: 15326}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -455,6 +455,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: RootMotion.Demos
     className: SoccerDemo
+  - hash:
+      serializedVersion: 2
+      Hash: 576060baa67412375ef0333181664ae2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ETMenu
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -1681,6 +1687,18 @@ ScriptsOnlyBuild:
     className: HitReaction
   - hash:
       serializedVersion: 2
+      Hash: 704dcd31abc789439bc3f3cd10b58c2b
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenComponent
+  - hash:
+      serializedVersion: 2
+      Hash: 179648033371456981a3c08cb9f47477
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenSettings
+  - hash:
+      serializedVersion: 2
       Hash: 5bddb32bcb848f51c6efb9a0b86ba855
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -2185,6 +2203,12 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ETMovingManager
+  - hash:
+      serializedVersion: 2
       Hash: e1300922cc039f41ab46a47f4cb05898
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -2363,6 +2387,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: RootMotion.FinalIK
     className: RotationLimitPolygonal
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EyeFixationsManager
   - hash:
       serializedVersion: 2
       Hash: 1042d12ae5878e0e28a814344e4a9e94
@@ -2881,6 +2911,12 @@ ScriptsOnlyBuild:
     className: GameTaskManager
   - hash:
       serializedVersion: 2
+      Hash: 18a323828139525f5561e9c7249ea1de
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GazeRay
+  - hash:
+      serializedVersion: 2
       Hash: f4986c583f5dcce50210c55c5f0b792c
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: I2.Loc
@@ -3305,43 +3341,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 576060baa67412375ef0333181664ae2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ETMenu
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ETMovingManager
-  - hash:
-      serializedVersion: 2
-      Hash: 704dcd31abc789439bc3f3cd10b58c2b
-    assemblyName: DOTween.dll
-    namespaceName: DG.Tweening.Core
-    className: DOTweenComponent
-  - hash:
-      serializedVersion: 2
-      Hash: 179648033371456981a3c08cb9f47477
-    assemblyName: DOTween.dll
-    namespaceName: DG.Tweening.Core
-    className: DOTweenSettings
-  - hash:
-      serializedVersion: 2
-      Hash: 81cb7f18fcded3860e10df948b125df9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EyeFixationsManager
-  - hash:
-      serializedVersion: 2
-      Hash: 18a323828139525f5561e9c7249ea1de
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GazeRay
   platform: 13
   scenePathNames:
   - Assets/Scenes/PicoET.unity
-  playerPath: D:/unity project/PicoSDK_TEST/fixations test.apk
+  playerPath: D:/unity project/Pico-EyeTracking/fixations test.apk
