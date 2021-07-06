@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PicoET.unity
     guid: b18b0e2c40cc9654c974c9405305daff
   - enabled: 0
     path: Assets/Scenes/SaccadesTest.unity
     guid: bfef85753604e954bb296ecc9679083a
+  - enabled: 1
+    path: Assets/Scenes/FixationsTest.unity
+    guid: a931d365f2fbd5b40a806c9cba234de1
   m_configObjects: {}

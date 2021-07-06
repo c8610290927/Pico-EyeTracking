@@ -720,6 +720,7 @@
      <Compile Include="Assets\Scripts\ETMovingManager.cs" />
      <Compile Include="Assets\Scripts\EyeFixationsManager.cs" />
      <Compile Include="Assets\Scripts\EyePositionData.cs" />
+     <Compile Include="Assets\Scripts\EyeSaccadesManager.cs" />
      <Compile Include="Assets\Scripts\GazeRay.cs" />
      <Compile Include="Assets\Scripts\LabFrameRelease\Config\ApplicationConfig.cs" />
      <Compile Include="Assets\Scripts\LabFrameRelease\Enum\Enum.cs" />

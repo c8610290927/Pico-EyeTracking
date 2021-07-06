@@ -73,7 +73,7 @@ public class ETMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("lastHit: "+lastHit);
+        //print("lastHit: "+lastHit);
         //头戴与手柄的逻辑
         if (HeadSetController.activeSelf)
         {
