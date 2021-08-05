@@ -15,7 +15,7 @@ public class GazeRay : MonoBehaviour
     {
         mainCamera = GameObject.Find("Pvr_UnitySDK").transform.GetChild(1).GetComponent<Camera>();
         
-        print("name: "+mainCamera.name);
+        //print("name: "+mainCamera.name);
 
         Assert.IsNotNull(GazeRayRenderer);
     }

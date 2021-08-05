@@ -9,8 +9,9 @@ public class EyeSaccadesManager : MonoBehaviour
 {
     Transform _selectObj;
     float gameTime = 0f;  //遊戲時間
-    int saccadeTime = 2;  //掃視需求次數(可設定)
+    int saccadeTime = 1;  //掃視需求次數(可設定)
     int count = 0;  //掃視消滅總數
+    bool gameTimeGate = true;  //遊戲計時開關(true:開啟計時)
     public GameObject dirtyThing;
     public GameObject gameoverCanves;  //遊戲結束視窗
 
@@ -19,9 +20,8 @@ public class EyeSaccadesManager : MonoBehaviour
     
     void Update()
     {
-        gameTime += Time.deltaTime;
-        //print("Game Time: " + gameTime);
-        //print("eyeTrackingData (openess): "+eyeTrackingData.rightEyeOpenness);
+        if (gameTimeGate)
+            gameTime += Time.deltaTime;
         
         if (count == 40)
         {
@@ -29,13 +29,16 @@ public class EyeSaccadesManager : MonoBehaviour
             if (saccadeTime != 0)
                 Instantiate(dirtyThing, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
             else
+            {
                 gameoverCanves.SetActive(true);
-                //輸出遊戲時間那些東西的數據
+                gameTimeGate = false;
+                print("GameOver");
+                //輸出遊戲時間那些東西的數據 (確認傳完1秒後自動關閉)
+                if(DebugHelper.queueCount == 0)
+                    Invoke("EndGame", 1f);
+            }
+                
         } 
-        else 
-        {
-            gameTime += Time.deltaTime;
-        }
 
         bool result_data = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingData(ref eyeTrackingData);
         bool result = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingGazeRay(ref gazeRay);
@@ -47,7 +50,6 @@ public class EyeSaccadesManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 20))
             {
                 if (hit.collider.transform.name.Equals("line")) return;
-                print("hit: "+ hit.transform.position);
                 if (_selectObj != null && _selectObj != hit.transform)
                 {
                     _selectObj = null;
@@ -72,18 +74,19 @@ public class EyeSaccadesManager : MonoBehaviour
                     _selectObj = null;
                 }
             }
-            if(result_data)
+            if(result_data && gameTimeGate)
             {
+                print("game time: "+ gameTime);
                 print("openness (Right): "+eyeTrackingData.rightEyeOpenness);
                 print("openness (Left): "+eyeTrackingData.leftEyeOpenness);
-                print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
-                print("eyeTracking (Left) (pupil): "+eyeTrackingData.leftEyePupilDilation);
+                //print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
+                //print("eyeTracking (Left) (pupil): "+eyeTrackingData.leftEyePupilDilation);
                 
                 print("eyeTracking (X) (vector): "+ eyeTrackingData.combinedEyeGazeVector.x);
                 print("eyeTracking (Y) (vector): "+ eyeTrackingData.combinedEyeGazeVector.y);
                 print("eyeTracking (Z) (vector): "+ eyeTrackingData.combinedEyeGazeVector.z);
                 //回傳labdata的資料 要另外寫一個class
-                EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
+                /*EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
                 {
                     positionX = eyeTrackingData.combinedEyeGazeVector.x,
                     positionY = eyeTrackingData.combinedEyeGazeVector.y,
@@ -93,7 +96,7 @@ public class EyeSaccadesManager : MonoBehaviour
                 };
                 //回傳labdata出去
                 if(count!=40 || saccadeTime!=0)
-                    GameDataManager.LabDataManager.SendData(eyepositiondata);
+                    GameDataManager.LabDataManager.SendData(eyepositiondata);*/
             }
         }
         else
@@ -104,5 +107,10 @@ public class EyeSaccadesManager : MonoBehaviour
             }
         }
 
+    }
+
+    private void EndGame()
+    {
+        Application.Quit();
     }
 }

@@ -35,7 +35,7 @@ public class ETMovingManager : MonoBehaviour
                     _selectObj = hit.transform;
                     //_selectObj.GetComponent<ETMEnity>().PlayAnimation();
                     //Object.transform.GetComponent<Renderer>().material.color = Color.yellow;
-                    _selectObj.GetComponent<Renderer>().material.color = Color.blue;
+                    //_selectObj.GetComponent<Renderer>().material.color = Color.blue;
                     Destroy(GameObject.Find(_selectObj.gameObject.name));
                     count = count + 1;
                 }
@@ -45,7 +45,7 @@ public class ETMovingManager : MonoBehaviour
             {
                 if (_selectObj != null)  //未注視狀況下
                 {
-                    _selectObj.GetComponent<Renderer>().material.color = Color.red;
+                    //_selectObj.GetComponent<Renderer>().material.color = Color.red;
                     //Object.transform.GetComponent<Renderer>().material.color = Color.red;
                     //_selectObj.GetComponent<ETMEnity>().StopAnimation();
                     _selectObj = null;

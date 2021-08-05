@@ -14,7 +14,8 @@ public class EyeFixationsManager : MonoBehaviour
     bool timeGate = false;  //注視計時開關
     float fixationsGate = 2f; //注視時間設定(達到幾秒destroy)
     int count = 0;  //注視成功次數
-    int fixationTime = 3;  //注視需求次數
+    int fixationTime = 4;  //注視需求次數-1
+    bool gameTimeGate = true;  //遊戲計時開關(true:開啟計時)
     //生成20組注視物件位置
     float[] positionX = new float[] {-0.47f, 1.75f, 0.84f, -0.95f, -2.63f, 0.85f, 2.16f, -1.74f, 1.01f, -2.50f, 2.72f, 1.03f, -0.52f, 2.67f, -1.26f, -1.39f, -2.97f, 2.95f, 1.59f, -1.60f};
     float[] positionY = new float[] {0.80f, -0.01f, 1.54f, -0.04f, -0.50f, 0.63f, 0.86f, 0.14f, 1.07f, 1.80f, -0.14f, 1.22f, 0.10f, 1.70f, 1.63f, 1.87f, 0.94f, 1.41f, -0.41f, 1.70f};
@@ -26,7 +27,7 @@ public class EyeFixationsManager : MonoBehaviour
     {
         //print("timer: " + Timer);
         //print("Game Time: " + gameTime);
-        if (count != fixationTime)
+        if (gameTimeGate)
             gameTime += Time.deltaTime;
         
         if (timeGate)
@@ -70,8 +71,15 @@ public class EyeFixationsManager : MonoBehaviour
                         count = count + 1;
                     }
                     else
+                    {
                         gameoverCanves.SetActive(true);
-                        //輸出遊戲數據
+                        gameTimeGate = false;  //關閉遊戲計時器
+                        print("GameOver");
+                        //輸出遊戲數據 (傳完1秒後自動關閉)
+                        if(DebugHelper.queueCount == 0)
+                            Invoke("EndGame", 1f);
+                    }
+                        
                 }
 
             }
@@ -86,18 +94,19 @@ public class EyeFixationsManager : MonoBehaviour
                     _selectObj = null;
                 }
             }
-            if(result_data)
+            if(result_data && gameTimeGate)
             {
+                print("game time: "+gameTime);
                 print("openness (Right): "+eyeTrackingData.rightEyeOpenness);
                 print("openness (Left): "+eyeTrackingData.leftEyeOpenness);
-                print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
-                print("eyeTracking (Left) (pupil): "+eyeTrackingData.leftEyePupilDilation);
+                //print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
+                //print("eyeTracking (Left) (pupil): "+eyeTrackingData.leftEyePupilDilation);
                 
                 print("eyeTracking (X) (vector): "+ eyeTrackingData.combinedEyeGazeVector.x);
                 print("eyeTracking (Y) (vector): "+ eyeTrackingData.combinedEyeGazeVector.y);
                 print("eyeTracking (Z) (vector): "+ eyeTrackingData.combinedEyeGazeVector.z);
                 //回傳labdata的資料 要另外寫一個class
-                EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
+                /*EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
                 {
                     positionX = eyeTrackingData.combinedEyeGazeVector.x,
                     positionY = eyeTrackingData.combinedEyeGazeVector.y,
@@ -107,7 +116,7 @@ public class EyeFixationsManager : MonoBehaviour
                 };
                 //回傳labdata出去
                 if(count != fixationTime)
-                    GameDataManager.LabDataManager.SendData(eyepositiondata);
+                    GameDataManager.LabDataManager.SendData(eyepositiondata);*/
             }
         }
         else
@@ -118,5 +127,10 @@ public class EyeFixationsManager : MonoBehaviour
             }
         }
 
+    }
+
+    private void EndGame()
+    {
+        Application.Quit();
     }
 }

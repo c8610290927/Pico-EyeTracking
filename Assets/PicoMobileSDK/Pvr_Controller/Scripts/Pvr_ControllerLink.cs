@@ -45,7 +45,7 @@ public class Pvr_ControllerLink
         gameobjname = name;
         hummingBirdMac = "";
         hummingBirdRSSI = 0;
-        Debug.Log("PvrLog Controller GameObject:" +gameobjname);
+        //Debug.Log("PvrLog Controller GameObject:" +gameobjname);
         StartHummingBirdService();
         Controller0 = new ControllerHand();
         Controller0.Position = new Vector3(0, Pvr_UnitySDKSensor.Instance.HeadPose.Position.y, 0)  + new Vector3(-0.1f, -0.3f, 0.3f);

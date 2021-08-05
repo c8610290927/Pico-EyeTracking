@@ -2,10 +2,10 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp-firstpass.dll:
     - I2.Loc.LanguageSourceAsset
-    - I2.Loc.ResourceManager
     Assembly-CSharp.dll:
+    - DebugHelper
     - ETMenu
-    - EyeFixationsManager
+    - EyeSaccadesManager
     - GazeRay
     - Pvr_Controller
     - Pvr_ControllerInit
@@ -23,7 +23,6 @@ ScriptsOnlyBuild:
     - Pvr_UnitySDKManager
     - Pvr_UnitySDKPlatformSetting
     - Pvr_UnitySDKProjectSetting
-    - ViveSR.anipal.Eye.DartBoard
     DOTween.dll:
     - DG.Tweening.Core.DOTweenSettings
     DOTweenUpgradeManager.dll:
@@ -39,7 +38,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/FixationsTest.unity:
+    Assets/Scenes/SaccadesTest.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -58,7 +57,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 64
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -97,31 +96,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12710}
     - Class: 114
-      Script: {instanceID: 12900}
+      Script: {instanceID: 12764}
     - Class: 114
-      Script: {instanceID: 13640}
+      Script: {instanceID: 12902}
     - Class: 114
-      Script: {instanceID: 13804}
+      Script: {instanceID: 13600}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 13644}
     - Class: 114
-      Script: {instanceID: 14110}
+      Script: {instanceID: 14080}
     - Class: 114
-      Script: {instanceID: 14146}
+      Script: {instanceID: 14114}
     - Class: 114
-      Script: {instanceID: 14186}
+      Script: {instanceID: 14150}
     - Class: 114
-      Script: {instanceID: 14296}
+      Script: {instanceID: 14190}
     - Class: 114
-      Script: {instanceID: 14574}
+      Script: {instanceID: 14300}
     - Class: 114
-      Script: {instanceID: 14796}
+      Script: {instanceID: 14800}
     - Class: 114
-      Script: {instanceID: 15124}
+      Script: {instanceID: 15128}
     - Class: 114
-      Script: {instanceID: 15250}
+      Script: {instanceID: 15254}
     - Class: 114
-      Script: {instanceID: 15326}
+      Script: {instanceID: 15330}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1761,6 +1760,12 @@ ScriptsOnlyBuild:
     className: GameApplication
   - hash:
       serializedVersion: 2
+      Hash: f30bff2683be14dafa075b7591a632ec
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EyeSaccadesManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: I2.Loc
@@ -2263,6 +2268,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SetBackgroundImage
+  - hash:
+      serializedVersion: 2
+      Hash: edc553d38321c1a37db0b7aad453b717
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DebugHelper
   - hash:
       serializedVersion: 2
       Hash: b5ad3ac64e6928b2f07d3a481321929c
@@ -3337,13 +3348,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f30bff2683be14dafa075b7591a632ec
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EyeSaccadesManager
   platform: 13
   scenePathNames:
-  - Assets/Scenes/FixationsTest.unity
-  playerPath: D:/unity project/Pico-EyeTracking/fixations test.apk
+  - Assets/Scenes/SaccadesTest.unity
+  playerPath: D:/unity project/Pico-EyeTracking/saccades test.apk
