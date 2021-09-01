@@ -3,11 +3,25 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using UnityEngine;
+using TensorFlowLite;
 
 public class DataPreprocessing : MonoBehaviour
 {
+    Interpreter interpreter;
+    float[] inputs = new float[5];
+    float[] outputs = new float[1];
+
     // Start is called before the first frame update
     void Start()
+    {
+        //資料前處理
+        DataPreprocess();
+
+        //開始load模型
+        MLmodelLoad();
+    }
+
+    public void DataPreprocess()
     {
         string line;
         string[] line2, line3;
@@ -20,8 +34,16 @@ public class DataPreprocessing : MonoBehaviour
         List<float> X = new List<float>();
         List<float> Y = new List<float>();
 
+        print("game:他有進dataPreprocessing啦啦啦啦啦:(");
+        print("game path: " + DebugHelper.path);
+
         //讀檔後開始進行前處理
-        StreamReader sr = new StreamReader("C:\\Users\\pocky chang\\testData\\N1_saccades.txt");
+        StreamReader sr = new StreamReader(DebugHelper.path); //實際狀況
+        //StreamReader sr = new StreamReader("C:\\Users\\pocky chang\\testData\\N4_saccades.txt"); //電腦測試
+        //StreamReader sr = new StreamReader("\\storage\\emulated\\0\\Android\\data\\com.DefaultCompany.PicoSDKTEST\\files\\202108291835saccades.txt"); //pico測試
+        
+        print("game:現在是檔案測試:(");
+
         //Read the first line of text
         line = sr.ReadLine();
         //Continue to read until you reach end of file
@@ -85,6 +107,7 @@ public class DataPreprocessing : MonoBehaviour
             }
             //Read the next line
             line = sr.ReadLine();
+
         }
         
         //計算眼動總距離與速度
@@ -96,16 +119,62 @@ public class DataPreprocessing : MonoBehaviour
             else
                 break;
         }
-        print("dist: "+ dist);
-        print("gameTime(total): "+gameTimeNow);
-        print("speed: "+ dist/gameTimeNow);
-        print("winkTimes (L): "+ winkTimesL);
-        print("winkTimes (R): "+ winkTimesR);
+        inputs[0] = (float)dist;
+        inputs[1] = gameTimeNow;
+        inputs[2] = (float)(dist / gameTimeNow);
+        inputs[3] = winkTimesR;
+        inputs[4] = winkTimesL;
+        for(int i = 0; i < 5; i++)
+            print("game inputs " +i+": "+ inputs[i]);
+
         //close the file
         sr.Close();
+        print("game: 前處理結束-u-");
 
-        //開始load模型
-        
     }
 
+    private void MLmodelLoad()
+    {
+        print("game: 現在在MLmodelLoad裡面喔");
+        // NO GPU
+        var options = new InterpreterOptions()
+        {
+            threads = 2
+        };
+        // 读取TFLite Model文件
+        print("game: 讀ML file囉");
+        //interpreter = new Interpreter(File.ReadAllBytes("C:\\Users\\pocky chang\\Saccades_NN_tflite_model.tflite"));
+        //interpreter = new Interpreter(FileUtil.LoadFile("C:\\Users\\pocky chang\\Saccades_NN_tflite_model.tflite"));
+        interpreter = new Interpreter(FileUtil.LoadFile("/storage/emulated/0/Android/data/com.DefaultCompany.PicoSDKTEST/files/Saccades_NN_tflite_model.tflite"),options);
+        print("game: 讀完囉:D");
+
+        var inputInfo = interpreter.GetInputTensorInfo(0);
+        var outputInfo = interpreter.GetOutputTensorInfo(0);
+
+        //print(inputInfo.shape); //shape[1]=5
+        //print(outputInfo.shape);//shape[1]=1
+        // 分配输入缓冲区
+        interpreter.ResizeInputTensor(0, inputInfo.shape);
+        interpreter.AllocateTensors();
+        // 传入输入数据
+        interpreter.SetInputTensorData(0, inputs);
+        // 執行
+        interpreter.Invoke();
+
+        // 獲取輸出數據
+        interpreter.GetOutputTensorData(0, outputs);
+
+        print("game outputs: " + outputs[0]);
+
+        Invoke("EndGame", 3f);
+    }
+    void OnDestroy()
+    {
+        interpreter?.Dispose();
+    }
+
+    private void EndGame()
+    {
+        Application.Quit();
+    }
 }

@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "com.github.asus4.tflite": "file:D:/tf-lite-unity-sample/Packages/com.github.asus4.tflite",
     "com.unity.barracuda": "file:C:/Users/pocky chang/Downloads/barracuda-release-1.4.0-preview",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ext.nunit": "1.0.0",
     "com.unity.ide.rider": "1.1.0",
     "com.unity.ide.vscode": "1.1.2",
+    "com.unity.ml-agents": "1.0.8",
     "com.unity.package-manager-ui": "2.2.0",
     "com.unity.render-pipelines.lightweight": "6.9.2",
     "com.unity.test-framework": "1.0.13",

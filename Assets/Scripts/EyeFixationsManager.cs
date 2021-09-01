@@ -14,7 +14,7 @@ public class EyeFixationsManager : MonoBehaviour
     bool timeGate = false;  //注視計時開關
     float fixationsGate = 2f; //注視時間設定(達到幾秒destroy)
     int count = 0;  //注視成功次數
-    int fixationTime = 4;  //注視需求次數-1
+    int fixationTime = 9;  //注視需求次數-1
     bool gameTimeGate = true;  //遊戲計時開關(true:開啟計時)
     //生成20組注視物件位置
     float[] positionX = new float[] {-0.47f, 1.75f, 0.84f, -0.95f, -2.63f, 0.85f, 2.16f, -1.74f, 1.01f, -2.50f, 2.72f, 1.03f, -0.52f, 2.67f, -1.26f, -1.39f, -2.97f, 2.95f, 1.59f, -1.60f};
@@ -74,10 +74,8 @@ public class EyeFixationsManager : MonoBehaviour
                     {
                         gameoverCanves.SetActive(true);
                         gameTimeGate = false;  //關閉遊戲計時器
+                        //輸出遊戲數據 (進入前處理+ML分析)
                         print("GameOver");
-                        //輸出遊戲數據 (傳完1秒後自動關閉)
-                        if(DebugHelper.queueCount == 0)
-                            Invoke("EndGame", 1f);
                     }
                         
                 }

@@ -612,7 +612,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
     4: TextMeshPro
-    7: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
+    7: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2;ENABLE_TENSORFLOW
     13: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
     19: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
     21: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
@@ -622,7 +622,8 @@ PlayerSettings:
     28: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
     29: TextMeshPro;UNITY_POST_PROCESSING_STACK_V2
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Android: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}

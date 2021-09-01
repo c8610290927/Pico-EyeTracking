@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.SceneManagement;
 using UnityEngine;
  
 public abstract class MonoSingletonManager<T> : MonoBehaviour where T : MonoSingletonManager<T>
@@ -40,7 +41,7 @@ public class DebugHelper : MonoSingletonManager<DebugHelper>
     static bool m_isInited;
     string logFolder;
     string logFilename;
-    string path;
+    static public string path;
  
     private Dictionary<LogType, LogLevel> logTypeLevelDict = null;
     private void Awake()
@@ -103,12 +104,12 @@ public class DebugHelper : MonoSingletonManager<DebugHelper>
         var sw = m_logFileInfo.CreateText();
         sw.WriteLine("[{0}] - {1}", Application.productName, timeNow.ToString("yyyy/MM/dd HH:mm:ss"));
         sw.Close();
-        Debug.Log("Log文件已創建：" + path);
  
         // 注册回调
         m_vLogs = new Queue<LogItem>();
         //Application.logMessageReceived += OnLogMessage;
         Application.logMessageReceivedThreaded += OnLogMessageThread;
+        //Debug.Log("Log文件已創建：" + path);
         Debug.Log("Log文件系統已啟動");
     }
  
@@ -132,7 +133,12 @@ public class DebugHelper : MonoSingletonManager<DebugHelper>
                 sw.WriteLine(logStr);
                 sw.Close();
                 m_vLogs.Dequeue(); // 成功执行了再移除队首元素
-                if(item.messageString == "GameOver") Application.Quit();
+                if (item.messageString == "GameOver")
+                {
+                    SceneManager.LoadScene("DataAnalysis");
+                    gameObject.SetActive(false);
+                    //Application.Quit();
+                }
             }
             catch (IOException ex)
             {

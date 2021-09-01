@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 using ViveSR.anipal.Eye;
 using UnityEngine.UI;
 using LabData;
@@ -17,13 +18,14 @@ public class EyeSaccadesManager : MonoBehaviour
 
     Pvr_UnitySDKAPI.EyeTrackingGazeRay gazeRay;
     Pvr_UnitySDKAPI.EyeTrackingData eyeTrackingData = new Pvr_UnitySDKAPI.EyeTrackingData();
-    
+
     void Update()
     {
-        if (gameTimeGate)
+        //SceneManager.LoadScene("DataAnalysis");
+        if (gameTimeGate)  //開關沒關 持續計時
             gameTime += Time.deltaTime;
         
-        if (count == 40)
+        if (count == 40) //把所有東西都削掉了
         {
             count = 0;
             if (saccadeTime != 0)
@@ -32,10 +34,11 @@ public class EyeSaccadesManager : MonoBehaviour
             {
                 gameoverCanves.SetActive(true);
                 gameTimeGate = false;
+
+                //輸出遊戲數據 (進入前處理+ML分析)
+                //gameObject.GetComponent<DataPreprocessing>().DataPreprocess();
                 print("GameOver");
-                //輸出遊戲時間那些東西的數據 (確認傳完1秒後自動關閉)
-                if(DebugHelper.queueCount == 0)
-                    Invoke("EndGame", 1f);
+
             }
                 
         } 
@@ -82,9 +85,10 @@ public class EyeSaccadesManager : MonoBehaviour
                 //print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
                 //print("eyeTracking (Left) (pupil): "+eyeTrackingData.leftEyePupilDilation);
                 
-                print("eyeTracking (X) (vector): "+ eyeTrackingData.combinedEyeGazeVector.x);
-                print("eyeTracking (Y) (vector): "+ eyeTrackingData.combinedEyeGazeVector.y);
-                print("eyeTracking (Z) (vector): "+ eyeTrackingData.combinedEyeGazeVector.z);
+                print("eyeTracking (X) (vector): " + eyeTrackingData.combinedEyeGazeVector.x);
+                print("eyeTracking (Y) (vector): " + eyeTrackingData.combinedEyeGazeVector.y);
+                print("eyeTracking (Z) (vector): " + eyeTrackingData.combinedEyeGazeVector.z);
+
                 //回傳labdata的資料 要另外寫一個class
                 /*EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
                 {
