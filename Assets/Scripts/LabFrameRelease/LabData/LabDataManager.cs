@@ -67,13 +67,18 @@ namespace LabData
             }
 
             #region 初始化本地存储
-            _localSaveDataTimeLayout = LabTools.GetConfig<LabDataConfig>().LocalSaveDataTimeLayout;
+            //_localSaveDataTimeLayout = LabTools.GetConfig<LabDataConfig>().LocalSaveDataTimeLayout;
+            _localSaveDataTimeLayout = "yyyyMMddHH";
             _userId = userId;
+            Debug.Log("create1: "+_saveDataPath);
             _saveDataPath = Application.dataPath + "/Output";
             LabTools.CreatSaveDataFolder(_saveDataPath);
+            Debug.Log("create2: " + _saveDataPath);
             var userStr = _userId.Invoke().PadLeft(2, '0');
             _saveDataPath = string.Join("_", _saveDataPath + "/" + DateTime.Now.ToString(_localSaveDataTimeLayout), userStr);
+            Debug.Log("create3: " + _saveDataPath);
             _saveDataPath = LabTools.CreatSaveDataFolder(_saveDataPath);
+            Debug.Log("create4: " + _saveDataPath);
             #endregion
 
             #region 初始化上传服务
@@ -81,16 +86,19 @@ namespace LabData
             var options = new DataSyncClientOptions()
             {
                 EndpointAddress = "http://localhost:4000/api/data",
-                ProjectId = LabTools.GetConfig<LabDataConfig>().ProjectId,
+                ProjectId = "ConcussionEyeTracking",
+                //ProjectId = LabTools.GetConfig<LabDataConfig>().ProjectId,
                 LogFilePath = labDataSavePath + "/ log.txt"
             };
 
             //Docker
-            options.EndpointAddress = "http://localhost/api/data";
+            //options.EndpointAddress = "http://localhost/api/data";
 
             //server
-            _sendToServer = LabTools.GetConfig<LabDataConfig>().SendToServer;
-            options.EndpointAddress = LabTools.GetConfig<LabDataConfig>().ServerPath;
+            _sendToServer = true;
+            //_sendToServer = LabTools.GetConfig<LabDataConfig>().SendToServer;
+            options.EndpointAddress = "http://140.115.54.9:5000/api/v1/vep/receive";
+            // options.EndpointAddress = LabTools.GetConfig<LabDataConfig>().ServerPath;
 
 
             if (!Directory.Exists("TestStore"))

@@ -69,16 +69,16 @@
     <Compile Include="C:\Users\pocky chang\Downloads\barracuda-release-1.4.0-preview\Barracuda\Editor\ONNXModelImporterEditor.cs" />
     <None Include="C:\Users\pocky chang\Downloads\barracuda-release-1.4.0-preview\Barracuda\Editor\Unity.Barracuda.Editor.asmdef" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -273,79 +273,79 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="LZ4Sharp">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/EquipmentSDK/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/EquipmentSDK/KinectScripts/LZ4Sharp/LZ4Sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/EquipmentSDK/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/EquipmentSDK/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="DeviceLibrary">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/LabDataVisualization/Plugins/DeviceLibrary.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/LabDataVisualization/Plugins/DeviceLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Vectrosity">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/LabDataVisualization/Vectrosity/Vectrosity/Plugins/Vectrosity.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/LabDataVisualization/Vectrosity/Vectrosity/Plugins/Vectrosity.dll</HintPath>
     </Reference>
     <Reference Include="VectrosityEditor">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/LabDataVisualization/Vectrosity/Vectrosity/Plugins/Editor/VectrosityEditor.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/LabDataVisualization/Vectrosity/Vectrosity/Plugins/Editor/VectrosityEditor.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/LitJson.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenUpgradeManager">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenUpgradeManager.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenUpgradeManager.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS_I2Loc.Xcode">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Plugins/I2/Localization/Scripts/Editor/Unity XCode/UnityEditor.iOS_I2Loc.Xcode.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Plugins/I2/Localization/Scripts/Editor/Unity XCode/UnityEditor.iOS_I2Loc.Xcode.dll</HintPath>
     </Reference>
     <Reference Include="DataSync.Core">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.Core.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.Core.dll</HintPath>
     </Reference>
     <Reference Include="DataSync">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.dll</HintPath>
     </Reference>
     <Reference Include="Autofac">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Autofac.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.Schema">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Newtonsoft.Json.Schema.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Newtonsoft.Json.Schema.dll</HintPath>
     </Reference>
     <Reference Include="InTheHand.Devices.Bluetooth">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.Devices.Bluetooth.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.Devices.Bluetooth.dll</HintPath>
     </Reference>
     <Reference Include="InTheHand">
-      <HintPath>D:/unity project/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
       <HintPath>C:/Users/pocky chang/Downloads/barracuda-release-1.4.0-preview/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/System.IO.Abstractions.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Grpc.Core">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:/unity project/Pico-EyeTracking/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

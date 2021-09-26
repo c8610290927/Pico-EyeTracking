@@ -135,9 +135,10 @@ public class DebugHelper : MonoSingletonManager<DebugHelper>
                 m_vLogs.Dequeue(); // 成功执行了再移除队首元素
                 if (item.messageString == "GameOver")
                 {
-                    SceneManager.LoadScene("DataAnalysis");
-                    gameObject.SetActive(false);
-                    //Application.Quit();
+                    //轉去等資料前處理與分析
+                    //SceneManager.LoadScene("DataAnalysis");
+                    //gameObject.SetActive(false);
+                    Application.Quit();
                 }
             }
             catch (IOException ex)
