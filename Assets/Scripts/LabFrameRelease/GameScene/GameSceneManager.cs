@@ -40,7 +40,7 @@ public class GameSceneManager : MonoSingleton<GameSceneManager>, IGameManager
     private void OnSceneChangeCompleted()
     {
         CurrentScene = SceneManager.GetActiveScene();
-        Debug.Log(CurrentScene);
+        Debug.Log("[create]: CurrentScene:" + CurrentScene);
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ public class GameSceneManager : MonoSingleton<GameSceneManager>, IGameManager
     {
         ChangeScene(new List<Action>()
         {
-            
+            GameUIManager.Instance.StartMainUiLogic,
             GameEntityManager.Instance.SetSceneEntity,
             GameTaskManager.Instance.StartGameTask,
             

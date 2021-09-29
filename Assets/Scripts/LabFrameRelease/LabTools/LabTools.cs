@@ -11,7 +11,6 @@ using I2.Loc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Schema.Generation;
 using UnityEngine;
 
 namespace LabData
@@ -38,16 +37,18 @@ namespace LabData
                 {
                     var tempPath = floderName + "_" + DateTime.Now.Millisecond.ToString();
                     Directory.CreateDirectory(tempPath);
+                    Debug.Log("[create] isNew: "+ tempPath);
+                    Directory.CreateDirectory(tempPath);
                     return tempPath;
                 }
 
-                Debug.Log("Folder Has Existed!");
+                Debug.Log("[create] Folder Has Existed!");
                 return floderName;
             }
             else
             {
                 Directory.CreateDirectory(floderName);
-                Debug.Log("Success Create: " + floderName);
+                Debug.Log("[create] Not existed! Success Create: " + floderName);
                 return floderName;
             }
         }
@@ -205,7 +206,8 @@ namespace LabData
         /// <returns></returns>
         public static T GetDataByString<T>(string file) where T : class
         {
-            JSchema schema = new JSchemaGenerator().Generate(typeof(T));
+            //JSchema schema = new JSchemaGenerator().Generate(typeof(T));
+            JsonSchema schema = new JsonSchemaGenerator().Generate(typeof(T));
             Debug.Log(schema);
             JToken token = JToken.Parse(file);
 
@@ -279,7 +281,7 @@ namespace LabData
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static string GetCurrentCultureValue(params string[] key)
+        /*public static string GetCurrentCultureValue(params string[] key)
         {
             return string.Join("", key.Select(p =>
             {
@@ -290,7 +292,7 @@ namespace LabData
                 }
                 return translate;
             }));
-        }
+        }*/
 
         public static Type GetScriptType(string name)
         {

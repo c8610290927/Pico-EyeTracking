@@ -824,7 +824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481582852}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -17, y: 42.5, z: -82.3}
+  m_LocalPosition: {x: -20.9, y: 42.5, z: -82.3}
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1101,9 +1101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849221234}
-  - component: {fileID: 1849221232}
   - component: {fileID: 1849221233}
-  - component: {fileID: 1849221235}
   m_Layer: 0
   m_Name: EyeTrackingManager
   m_TagString: Untagged
@@ -1111,20 +1109,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1849221232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849221231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c28d71caa42794981d96e0a711117c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pvr: {fileID: 1683912293440724, guid: 9d6719e042b270144b02ecd0cbb39e1a, type: 3}
-  rayDefaultLength: 4
 --- !u!114 &1849221233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,21 +1137,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1849221235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849221231}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706bbf9a74092674f9ed5445ccb4ff03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moduleName: 1
-  SaveLogLevel: 0
-  IsSameFile: 0
 --- !u!1 &1962987451
 GameObject:
   m_ObjectHideFlags: 0

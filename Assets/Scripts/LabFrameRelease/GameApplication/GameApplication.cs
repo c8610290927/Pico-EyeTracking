@@ -11,6 +11,7 @@ public class GameApplication : MonoSingleton<GameApplication>
 {
 
     private bool _isOnApplicationQuit;
+    private bool _isDisposeCompleted;
     /// <summary>
     /// 继承Manager的集合
     /// </summary>
@@ -19,12 +20,14 @@ public class GameApplication : MonoSingleton<GameApplication>
 
     private void Awake()
     {
-        var applicationConfig = LabTools.GetConfig<ApplicationConfig>();
-        XRSettings.enabled = applicationConfig.IsOpenVR;
+        Debug.Log("[create]: 哭啊是GameApplication的Awake");
+        //var applicationConfig = LabTools.GetConfig<ApplicationConfig>();
+        //XRSettings.enabled = applicationConfig.IsOpenVR;
         DontDestroyOnLoad(this);
-        GameApplicationInit();       
+        GameApplicationInit();
+        OneSelfStart();
         //自身启动
-        if (applicationConfig.OneSelf)
+        /*if (applicationConfig.OneSelf)
         {
             OneSelfStart();
         }
@@ -32,7 +35,7 @@ public class GameApplication : MonoSingleton<GameApplication>
         else
         {
             ExternalStart();
-        }
+        }*/
     }
 
     /// <summary>
@@ -70,6 +73,7 @@ public class GameApplication : MonoSingleton<GameApplication>
             yield return StartCoroutine(_gameManagers[i].ManagerDispose());
         }
         _gameManagers.Clear();
+        _isDisposeCompleted = true;
         yield return null;
     }
     public void GameApplicationQuit()
@@ -77,9 +81,25 @@ public class GameApplication : MonoSingleton<GameApplication>
         if (!_isOnApplicationQuit)
         {
             GameApplicationDispose();
-            Application.Quit();
+            //Application.Quit();
             _isOnApplicationQuit = true;
+            StartCoroutine(WaitforQuitGame());
         }
+    }
+
+    /// <summary>
+    /// 等待Dispose結束才Application.Quit
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator WaitforQuitGame()
+    {
+        yield return new WaitUntil(() => _isDisposeCompleted);
+
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 
     protected override void OnApplicationQuit()
@@ -95,9 +115,12 @@ public class GameApplication : MonoSingleton<GameApplication>
     {
         string[] arguments = Environment.GetCommandLineArgs();
 
-        GameFlowData gameFlowData = new GameFlowData();
+        /*GameFlowData gameFlowData = new GameFlowData();
         GameDataManager.FlowData = LabTools.GetDataByString<GameFlowData>(gameFlowData.ToJson());
         GameDataManager.LabDataManager.LabDataCollectInit(()=> GameDataManager.FlowData.UserId);
+        GameSceneManager.Instance.Change2MainScene();*/
+        GameDataManager.FlowData = LabTools.GetDataByString<GameFlowData>(arguments[1]);
+        GameDataManager.LabDataManager.LabDataCollectInit(() => GameDataManager.FlowData.UserId);
         GameSceneManager.Instance.Change2MainScene();
     }
 

@@ -31,7 +31,7 @@ namespace LabData
         private LabDataScope Scope { get; set; }
         private Func<string> _userId;
         private SimpleApplicationLifecycle _applicationLifecycle;
-        private string labDataSavePath => Application.dataPath + "/TestData";
+        private string labDataSavePath => Application.persistentDataPath + "/TestData";
         // private readonly List<DataWriter> _dataWriters = new List<DataWriter>();
         private string _localSaveDataTimeLayout;
         private ConcurrentQueue<LabDataBase> _dataQueue;
@@ -68,17 +68,17 @@ namespace LabData
 
             #region 初始化本地存储
             //_localSaveDataTimeLayout = LabTools.GetConfig<LabDataConfig>().LocalSaveDataTimeLayout;
-            _localSaveDataTimeLayout = "yyyyMMddHH";
+            _localSaveDataTimeLayout = "yyyyMMddHHmm";
             _userId = userId;
-            Debug.Log("create1: "+_saveDataPath);
-            _saveDataPath = Application.dataPath + "/Output";
+            Debug.Log("[Create]1: "+_saveDataPath);
+            _saveDataPath = Application.persistentDataPath + "/Output";
             LabTools.CreatSaveDataFolder(_saveDataPath);
-            Debug.Log("create2: " + _saveDataPath);
+            Debug.Log("[Create]2: "+_saveDataPath);
             var userStr = _userId.Invoke().PadLeft(2, '0');
             _saveDataPath = string.Join("_", _saveDataPath + "/" + DateTime.Now.ToString(_localSaveDataTimeLayout), userStr);
-            Debug.Log("create3: " + _saveDataPath);
+            Debug.Log("[Create]3: "+_saveDataPath);
             _saveDataPath = LabTools.CreatSaveDataFolder(_saveDataPath);
-            Debug.Log("create4: " + _saveDataPath);
+            Debug.Log("[Create]4: "+_saveDataPath);
             #endregion
 
             #region 初始化上传服务
@@ -91,19 +91,19 @@ namespace LabData
                 LogFilePath = labDataSavePath + "/ log.txt"
             };
 
-            //Docker
-            //options.EndpointAddress = "http://localhost/api/data";
-
             //server
             _sendToServer = true;
             //_sendToServer = LabTools.GetConfig<LabDataConfig>().SendToServer;
-            options.EndpointAddress = "http://140.115.54.9:5000/api/v1/vep/receive";
+
+
+            options.EndpointAddress = "http://140.115.54.20:5000/api/v1/eyeTracking/receive";
+            //options.EndpointAddress = "http://140.115.54.9:5000/api/v1/vep/receive";
             // options.EndpointAddress = LabTools.GetConfig<LabDataConfig>().ServerPath;
 
 
-            if (!Directory.Exists("TestStore"))
+            if (!Directory.Exists(Application.persistentDataPath + "/TestStore"))
             {
-                Directory.CreateDirectory("TestStore");
+                Directory.CreateDirectory(Application.persistentDataPath + "/TestStore");
             }
             _applicationLifecycle = new SimpleApplicationLifecycle();
 
@@ -131,10 +131,10 @@ namespace LabData
         {
             await Task.Run(() =>
             {
-                while(_dataQueue.Count > 0)
+                while (_dataQueue.Count > 0)
                 {
-                    Debug.Log(( $"Remain {0} Data to be stored", _dataQueue.Count));
-                    Thread.Sleep(100);                   
+                    Debug.Log(($"[create]: Remain {0} Data to be stored", _dataQueue.Count));
+                    Thread.Sleep(100);
                 }
             });
             foreach (var item in _dataWriterDic)
@@ -209,7 +209,7 @@ namespace LabData
             {
                 return;
             }
-            Debug.Log("开始");
+            Debug.Log("[INFO_create] LabData starts upload...");
             _applicationLifecycle.OnStarted(EventArgs.Empty);
             Scope = _client.CreateNewScope();
             Scope.StartScope();
@@ -222,9 +222,9 @@ namespace LabData
             {
                 return;
             }
-            Debug.Log("停止");
-            Scope.StopScope();
-            Scope.Dispose();
+            Debug.Log("[create]: 停止");
+            //Scope.StopScope();
+            //Scope.Dispose();
 
             _applicationLifecycle.OnStopping(ApplicationStoppingEventArgs.Empty);
             IsClientRunning = false;

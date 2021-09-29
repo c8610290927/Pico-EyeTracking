@@ -300,17 +300,11 @@
     <Reference Include="DataSync">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="NLog">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.dll</HintPath>
     </Reference>
     <Reference Include="Autofac">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json.Schema">
-      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Newtonsoft.Json.Schema.dll</HintPath>
     </Reference>
     <Reference Include="InTheHand.Devices.Bluetooth">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/32feet/InTheHand.Devices.Bluetooth.dll</HintPath>
@@ -335,6 +329,9 @@
     </Reference>
     <Reference Include="System.Interactive.Async">
       <HintPath>D:/Pico-EyeTracking/Library/PackageCache/com.unity.ml-agents@1.0.8/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/Pico-EyeTracking/Library/PackageCache/jillejr.newtonsoft.json-for-unity@13.0.102/Plugins/Newtonsoft.Json Editor/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -9,7 +9,7 @@ namespace GameData
         /// 游戏的主UI场景名
         /// </summary>
         public const string MainUiScene = "MainUI";
-        public const string MainScene = "MainScene";
+        public const string MainScene = "SaccadesTest";
         
         public const int GameUIManagerWeight = 0;
         public const int GameEntityManagerWeight = 30;

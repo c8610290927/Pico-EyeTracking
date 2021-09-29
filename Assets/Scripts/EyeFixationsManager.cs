@@ -35,6 +35,9 @@ public class EyeFixationsManager : MonoBehaviour
 
         bool result_data = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingData(ref eyeTrackingData);
         bool result = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingGazeRay(ref gazeRay);
+        //回傳labdata的資料 要另外寫一個class (記錄eyedata)
+        EyePositionData eyepositiondata = new EyePositionData();
+
         if (result)
         {
             Ray ray = new Ray(gazeRay.Origin, gazeRay.Direction);
@@ -76,6 +79,8 @@ public class EyeFixationsManager : MonoBehaviour
                         gameTimeGate = false;  //關閉遊戲計時器
                         //輸出遊戲數據 (進入前處理+ML分析)
                         print("GameOver");
+                        //10秒後自動關閉遊戲
+                        Invoke("EndGame", 10f);
                     }
                         
                 }
@@ -97,24 +102,16 @@ public class EyeFixationsManager : MonoBehaviour
                 print("game time: "+gameTime);
                 print("openness (Right): "+eyeTrackingData.rightEyeOpenness);
                 print("openness (Left): "+eyeTrackingData.leftEyeOpenness);
-                //print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
-                //print("eyeTracking (Left) (pupil): "+eyeTrackingData.leftEyePupilDilation);
-                
                 print("eyeTracking (X) (vector): "+ eyeTrackingData.combinedEyeGazeVector.x);
                 print("eyeTracking (Y) (vector): "+ eyeTrackingData.combinedEyeGazeVector.y);
                 print("eyeTracking (Z) (vector): "+ eyeTrackingData.combinedEyeGazeVector.z);
-                //回傳labdata的資料 要另外寫一個class
-                /*EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
-                {
-                    positionX = eyeTrackingData.combinedEyeGazeVector.x,
-                    positionY = eyeTrackingData.combinedEyeGazeVector.y,
-                    positionZ = eyeTrackingData.combinedEyeGazeVector.z,
-                    leftEyeOpenness = eyeTrackingData.leftEyeOpenness,
-                    rightEyeOpenness = eyeTrackingData.rightEyeOpenness
-                };
-                //回傳labdata出去
-                if(count != fixationTime)
-                    GameDataManager.LabDataManager.SendData(eyepositiondata);*/
+
+                eyepositiondata.timeStamp = gameTime;
+                eyepositiondata.positionX = eyeTrackingData.combinedEyeGazeVector.x;
+                eyepositiondata.positionY = eyeTrackingData.combinedEyeGazeVector.y;
+                eyepositiondata.positionZ = eyeTrackingData.combinedEyeGazeVector.z;
+                eyepositiondata.leftEyeOpenness = eyeTrackingData.leftEyeOpenness;
+                eyepositiondata.rightEyeOpenness = eyeTrackingData.rightEyeOpenness;
             }
         }
         else
@@ -124,6 +121,9 @@ public class EyeFixationsManager : MonoBehaviour
                 _selectObj = null;
             }
         }
+        //回傳labdata出去
+        if (eyepositiondata.timeStamp != 0.0)
+            GameDataManager.LabDataManager.SendData(eyepositiondata);
 
     }
 

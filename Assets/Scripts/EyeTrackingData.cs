@@ -1,34 +1,16 @@
 ﻿using DataSync;
+using System;
 
-namespace Data
+namespace LabData
 {
+    [Serializable]
     public class EyeTrackingData : LabDataBase
     {
-        
-    }
-
-    public class EyePositionData : LabDataBase
-    {
-        public float timeStep;
-        public float positionX;
-        public float positionY;
-        public float positionZ;
-        public int leftEyeOpenness;
-        public int rightEyeOpenness;
-    }
-
-    public class EyeFeatureData : LabDataBase
-    {
         public float distance;
-        public float pgameTime;
+        public float gameTime;
         public float speed;
-        public int winkTimesL;
-        public int winkTimesR;
+        public float winkTimesL;
+        public float winkTimesR;
     }
 
-    /*public enum GameModeEnum
-    {
-        Checkboard = 0,
-        Pure = 1
-    }*/
 }

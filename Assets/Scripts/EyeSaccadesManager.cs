@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.SceneManagement;
-using ViveSR.anipal.Eye;
 using UnityEngine.UI;
 using LabData;
 
@@ -34,10 +33,11 @@ public class EyeSaccadesManager : MonoBehaviour
             {
                 gameoverCanves.SetActive(true);
                 gameTimeGate = false;
-
+                print("[create] GameOver");
                 //輸出遊戲數據 (進入前處理+ML分析)
                 //gameObject.GetComponent<DataPreprocessing>().DataPreprocess();
-                print("GameOver");
+                //20秒後自動關閉遊戲
+                Invoke("EndGame", 20f);
 
             }
                 
@@ -45,6 +45,8 @@ public class EyeSaccadesManager : MonoBehaviour
 
         bool result_data = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingData(ref eyeTrackingData);
         bool result = Pvr_UnitySDKAPI.System.UPvr_getEyeTrackingGazeRay(ref gazeRay);
+        //回傳labdata的資料 要另外寫一個class (記錄eyedata)
+        EyePositionData eyepositiondata = new EyePositionData();
         if (result)
         {
             Ray ray = new Ray(gazeRay.Origin, gazeRay.Direction);
@@ -79,7 +81,7 @@ public class EyeSaccadesManager : MonoBehaviour
             }
             if(result_data && gameTimeGate)
             {
-                print("game time: "+ gameTime);
+                print("[create] game time: " + gameTime);
                 print("openness (Right): "+eyeTrackingData.rightEyeOpenness);
                 print("openness (Left): "+eyeTrackingData.leftEyeOpenness);
                 //print("eyeTracking (Right) (pupil): "+eyeTrackingData.rightEyePupilDilation);
@@ -89,18 +91,14 @@ public class EyeSaccadesManager : MonoBehaviour
                 print("eyeTracking (Y) (vector): " + eyeTrackingData.combinedEyeGazeVector.y);
                 print("eyeTracking (Z) (vector): " + eyeTrackingData.combinedEyeGazeVector.z);
 
-                //回傳labdata的資料 要另外寫一個class
-                /*EyePositionData eyepositiondata = new EyePositionData() //記錄eyedata
-                {
-                    positionX = eyeTrackingData.combinedEyeGazeVector.x,
-                    positionY = eyeTrackingData.combinedEyeGazeVector.y,
-                    positionZ = eyeTrackingData.combinedEyeGazeVector.z,
-                    leftEyeOpenness = eyeTrackingData.leftEyeOpenness,
-                    rightEyeOpenness = eyeTrackingData.rightEyeOpenness
-                };
-                //回傳labdata出去
-                if(count!=40 || saccadeTime!=0)
-                    GameDataManager.LabDataManager.SendData(eyepositiondata);*/
+
+                eyepositiondata.timeStamp = gameTime;
+                eyepositiondata.positionX = eyeTrackingData.combinedEyeGazeVector.x;
+                eyepositiondata.positionY = eyeTrackingData.combinedEyeGazeVector.y;
+                eyepositiondata.positionZ = eyeTrackingData.combinedEyeGazeVector.z;
+                eyepositiondata.leftEyeOpenness = eyeTrackingData.leftEyeOpenness;
+                eyepositiondata.rightEyeOpenness = eyeTrackingData.rightEyeOpenness;
+                
             }
         }
         else
@@ -110,6 +108,9 @@ public class EyeSaccadesManager : MonoBehaviour
                 _selectObj = null;
             }
         }
+        //回傳labdata出去
+        if(eyepositiondata.timeStamp != 0.0)
+            GameDataManager.LabDataManager.SendData(eyepositiondata);
 
     }
 
