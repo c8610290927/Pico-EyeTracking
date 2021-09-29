@@ -3,7 +3,7 @@
 
   - unity版本: 2019.2.10f1
   
-  - 參考Pico官方釋出的眼動相關專案傳寫 (網址: https://github.com/picoxr/EyeTracking)
+  - 參考Pico官方釋出的眼動相關專案撰寫 (網址: https://github.com/picoxr/EyeTracking)
   
   - 參考此Tensorflow Lite在unity運作的專案 (網址: https://github.com/asus4/tf-lite-unity-sample/tree/master/Assets/Samples)
   
