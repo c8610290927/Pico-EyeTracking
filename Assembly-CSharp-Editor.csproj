@@ -480,14 +480,80 @@
     <Reference Include="UnityEditor.iOS_I2Loc.Xcode">
       <HintPath>D:/Pico-EyeTracking/Assets/Plugins/I2/Localization/Scripts/Editor/Unity XCode/UnityEditor.iOS_I2Loc.Xcode.dll</HintPath>
     </Reference>
+    <Reference Include="CommandLine">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/CommandLine.dll</HintPath>
+    </Reference>
     <Reference Include="DataSync.Core">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DataSync">
-      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSync.dll</HintPath>
+    <Reference Include="DataSyncClient">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/DataSyncClient.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindfrog.ChildClass">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Mindfrog.ChildClass.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindfrog.EegDeviceData">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Mindfrog.EegDeviceData.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindfrog.EyeDeviceData">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Mindfrog.EyeDeviceData.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindfrog.MotionTrackerData">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Mindfrog.MotionTrackerData.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindfrog.Share">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Mindfrog.Share.dll</HintPath>
     </Reference>
     <Reference Include="NLog">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Etw">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/NLog.Etw.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Api">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/OpenTelemetry.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/OpenTelemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTelemetry.Exporter.WithLocalStorage">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/OpenTelemetry.Exporter.WithLocalStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/LabData/DataSync/Assemblies/System.Security.Principal.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Autofac">
       <HintPath>D:/Pico-EyeTracking/Assets/Scripts/LabFrameRelease/Third Party/Autofac.dll</HintPath>

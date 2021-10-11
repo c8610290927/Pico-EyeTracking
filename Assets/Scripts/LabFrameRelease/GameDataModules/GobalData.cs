@@ -10,7 +10,8 @@ namespace GameData
         /// </summary>
         public const string MainUiScene = "MainUI";
         public const string MainScene = "SaccadesTest";
-        
+        //public const string MainScene = "FixationsTest";
+
         public const int GameUIManagerWeight = 0;
         public const int GameEntityManagerWeight = 30;
         public const int GameSceneManagerWeight = 50;

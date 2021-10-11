@@ -9,6 +9,7 @@ namespace LabData
     [Serializable]
     public class EyePositionData : LabDataBase
     {
+        public string mode;  
         public float timeStamp;
         public float positionX;
         public float positionY;

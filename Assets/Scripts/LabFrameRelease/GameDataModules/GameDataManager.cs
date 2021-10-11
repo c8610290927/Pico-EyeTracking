@@ -21,15 +21,20 @@ public class GameDataManager : MonoSingleton<GameDataManager>, IGameManager
     /// </summary>
     public static GameFlowData FlowData { get; set; }
 
+    // New LabData module
+    public static ClientDataSyncLink LabDataClient { get; set; }
+
     int IGameManager.Weight => GobalData.GameDataManagerWeight;
 
     void IGameManager.ManagerInit()
     {
         LabDataManager = new LabDataManager();
+        Debug.Log("[create]: GameDataManager END");
     }
 
     IEnumerator IGameManager.ManagerDispose()
     {
+        LabDataClient.TaskScopeStop();
         LabDataManager.LabDataDispose();
         yield return null;
     }

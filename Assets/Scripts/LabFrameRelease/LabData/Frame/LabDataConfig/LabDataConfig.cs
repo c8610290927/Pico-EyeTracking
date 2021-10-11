@@ -1,6 +1,6 @@
 ﻿
 
-public class LabDataConfig 
+public class LabDataConfig
 {
     public bool SendToServer { get; set; }
     /// <summary>
@@ -17,7 +17,7 @@ public class LabDataConfig
     public LabDataConfig()
     {
         ServerPath = "http://120.132.106.14:4000/api/data";
-        SendToServer = true;
+        SendToServer = false;
         LocalSaveDataTimeLayout = "yyyyMMddHH";
         ProjectId = "Null";
     }
